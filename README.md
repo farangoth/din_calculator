@@ -1,5 +1,4 @@
 # DIN calculator
-WORK IN PROGRESS
 
 This is a simple DIN calculator to set up a ski binding according to the ISO and DIN institutes.
 
