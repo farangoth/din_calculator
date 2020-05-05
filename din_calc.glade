@@ -123,12 +123,14 @@ Author: Clément Savalle - savalle.clement@gmail.com
       <object class="GtkGrid">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">end</property>
         <property name="row_homogeneous">True</property>
         <property name="column_homogeneous">True</property>
         <child>
           <object class="GtkEntry" id="weight">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="margin_right">5</property>
             <property name="text" translatable="yes">65</property>
             <property name="placeholder_text" translatable="yes">weight</property>
             <property name="input_purpose">digits</property>
@@ -142,6 +144,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           <object class="GtkEntry" id="height">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="margin_right">5</property>
             <property name="text" translatable="yes">172</property>
             <property name="placeholder_text" translatable="yes">height (kg)</property>
             <property name="input_purpose">digits</property>
@@ -177,6 +180,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_right">5</property>
             <property name="label" translatable="yes">Name</property>
           </object>
           <packing>
@@ -188,6 +192,8 @@ Author: Clément Savalle - savalle.clement@gmail.com
           <object class="GtkEntry" id="name">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="margin_right">5</property>
+            <property name="text" translatable="yes">Rider</property>
             <property name="placeholder_text" translatable="yes">Name</property>
             <property name="input_purpose">name</property>
           </object>
@@ -211,7 +217,8 @@ Author: Clément Savalle - savalle.clement@gmail.com
           <object class="GtkEntry" id="sole_length">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="text" translatable="yes">310</property>
+            <property name="margin_right">5</property>
+            <property name="text" translatable="yes">300</property>
             <property name="placeholder_text" translatable="yes">sole length (mm)</property>
             <property name="input_purpose">digits</property>
           </object>
@@ -235,6 +242,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           <object class="GtkEntry" id="level">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="margin_right">5</property>
             <property name="max_length">1</property>
             <property name="text" translatable="yes">2</property>
             <property name="placeholder_text" translatable="yes">Level (0-4)</property>
@@ -260,6 +268,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           <object class="GtkEntry" id="age">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="margin_right">5</property>
             <property name="text" translatable="yes">35</property>
             <property name="placeholder_text" translatable="yes">age</property>
             <property name="input_purpose">digits</property>
@@ -275,14 +284,34 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="margin_top">2</property>
-            <property name="margin_bottom">2</property>
+            <property name="margin_left">5</property>
+            <property name="margin_right">5</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">5</property>
             <property name="use_stock">True</property>
             <signal name="clicked" handler="on_button_yes_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">12</property>
+            <property name="top_attach">13</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="log">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">end</property>
+            <property name="valign">start</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_top">10</property>
+            <property name="margin_bottom">10</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">1</property>
+            <property name="width">2</property>
+            <property name="height">10</property>
           </packing>
         </child>
         <child>
@@ -293,7 +322,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">3</property>
-            <property name="top_attach">11</property>
+            <property name="top_attach">13</property>
           </packing>
         </child>
         <child>
@@ -307,56 +336,21 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">4</property>
-            <property name="top_attach">11</property>
+            <property name="top_attach">13</property>
           </packing>
         </child>
         <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">5</property>
+            <property name="margin_right">5</property>
+            <property name="label" translatable="yes">Log</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">0</property>
+          </packing>
         </child>
         <child>
           <placeholder/>

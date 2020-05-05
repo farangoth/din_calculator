@@ -26,7 +26,9 @@ class Din_window(Gtk.Window):
     def on_button_yes_clicked(self, button):
         self.rider = Rider()
         self.din_set_label = self.builder.get_object("din_result")
+        self.log = self.builder.get_object("log")
 
+        self.rider.name = self.builder.get_object("name").get_text()
         self.rider.weight = int(self.builder.get_object("weight").get_text())
         self.rider.height = int(self.builder.get_object("height").get_text())
         self.rider.level = int(self.builder.get_object("level").get_text())
@@ -36,9 +38,17 @@ class Din_window(Gtk.Window):
 
         self.rider.din_set = self.rider.get_din_set()
 
-        print(self.rider)
+        if self.rider.name == "":
+            self.rider.name = "Rider"
 
         self.din_set_label.set_text(str(self.rider.din_set))
+        self.log.set_text(
+            self.log.get_text()
+            + "\n"
+            + self.rider.name
+            + ": "
+            + str(self.rider.din_set)
+        )
 
     def __init__(self):
         Gtk.Window.__init__(self, title="DIN Calc")
