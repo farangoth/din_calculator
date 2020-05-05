@@ -60,7 +60,7 @@ LEVELS = (
 )
 
 
-def increment_din_code(self, code, increment):
+def increment_din_code(code, increment):
     """Increment a code in the DIN codes list."""
     codes_list = ''.join(DIN_TAB.keys())
     return codes_list[codes_list.index(code) + increment]
@@ -103,7 +103,7 @@ class Rider():
         if self.age < 10 or self.age > 49.1:
             code_din = increment_din_code(code_din, -1)
 
-        code_din = ncrement_din_code(code_din, self.level-2)
+        code_din = increment_din_code(code_din, self.level - 2)
 
         for sole_lenght_sup in SOLE_LENGHT_TAB:
             if self.sole_length < sole_lenght_sup:
