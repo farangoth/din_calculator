@@ -61,71 +61,21 @@ Author: Clément Savalle - savalle.clement@gmail.com
       </object>
     </child>
   </object>
+  <object class="GtkTextBuffer" id="log_buffer"/>
   <object class="GtkWindow" id="main_window">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">DIN Calc</property>
+    <property name="window_position">center</property>
     <signal name="destroy" handler="on_main_window_destroy" swapped="no"/>
     <child type="titlebar">
-      <object class="GtkMenuBar">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <child>
-          <object class="GtkMenuItem">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">_File</property>
-            <property name="use_underline">True</property>
-            <child type="submenu">
-              <object class="GtkMenu">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <child>
-                  <object class="GtkImageMenuItem" id="gtk_quit">
-                    <property name="label">gtk-quit</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="use_stock">True</property>
-                    <signal name="activate" handler="on_gtk_quit_activate" swapped="no"/>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-        </child>
-        <child>
-          <object class="GtkMenuItem">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">_Help</property>
-            <property name="use_underline">True</property>
-            <child type="submenu">
-              <object class="GtkMenu">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <child>
-                  <object class="GtkImageMenuItem" id="gtk_about">
-                    <property name="label">gtk-about</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="use_stock">True</property>
-                    <signal name="activate" handler="on_gtk_about_activate" swapped="no"/>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-        </child>
-      </object>
+      <placeholder/>
     </child>
     <child>
       <object class="GtkGrid">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="halign">end</property>
-        <property name="row_homogeneous">True</property>
-        <property name="column_homogeneous">True</property>
+        <property name="row_spacing">4</property>
+        <property name="column_spacing">5</property>
         <child>
           <object class="GtkEntry" id="weight">
             <property name="visible">True</property>
@@ -137,7 +87,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">7</property>
+            <property name="top_attach">3</property>
           </packing>
         </child>
         <child>
@@ -151,7 +101,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">9</property>
+            <property name="top_attach">4</property>
           </packing>
         </child>
         <child>
@@ -159,10 +109,11 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Weight</property>
+            <property name="justify">right</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">7</property>
+            <property name="top_attach">3</property>
           </packing>
         </child>
         <child>
@@ -170,22 +121,23 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Height</property>
+            <property name="justify">right</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">9</property>
+            <property name="top_attach">4</property>
           </packing>
         </child>
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_right">5</property>
             <property name="label" translatable="yes">Name</property>
+            <property name="justify">right</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">1</property>
+            <property name="top_attach">0</property>
           </packing>
         </child>
         <child>
@@ -199,7 +151,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">1</property>
+            <property name="top_attach">0</property>
           </packing>
         </child>
         <child>
@@ -207,10 +159,11 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Sole length</property>
+            <property name="justify">right</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">11</property>
+            <property name="top_attach">5</property>
           </packing>
         </child>
         <child>
@@ -224,7 +177,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">11</property>
+            <property name="top_attach">5</property>
           </packing>
         </child>
         <child>
@@ -232,10 +185,11 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Level</property>
+            <property name="justify">right</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">3</property>
+            <property name="top_attach">1</property>
           </packing>
         </child>
         <child>
@@ -250,7 +204,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">3</property>
+            <property name="top_attach">1</property>
           </packing>
         </child>
         <child>
@@ -258,10 +212,11 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Age</property>
+            <property name="justify">right</property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">5</property>
+            <property name="top_attach">2</property>
           </packing>
         </child>
         <child>
@@ -275,7 +230,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">5</property>
+            <property name="top_attach">2</property>
           </packing>
         </child>
         <child>
@@ -293,25 +248,7 @@ Author: Clément Savalle - savalle.clement@gmail.com
           </object>
           <packing>
             <property name="left_attach">1</property>
-            <property name="top_attach">13</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="log">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">end</property>
-            <property name="valign">start</property>
-            <property name="margin_left">10</property>
-            <property name="margin_right">10</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
-          </object>
-          <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">1</property>
-            <property name="width">2</property>
-            <property name="height">10</property>
+            <property name="top_attach">6</property>
           </packing>
         </child>
         <child>
@@ -319,10 +256,13 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">DIN</property>
+            <property name="justify">center</property>
+            <property name="ellipsize">middle</property>
+            <property name="width_chars">8</property>
           </object>
           <packing>
-            <property name="left_attach">3</property>
-            <property name="top_attach">13</property>
+            <property name="left_attach">2</property>
+            <property name="top_attach">6</property>
           </packing>
         </child>
         <child>
@@ -330,126 +270,45 @@ Author: Clément Savalle - savalle.clement@gmail.com
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">0.0</property>
+            <property name="justify">center</property>
+            <property name="ellipsize">middle</property>
+            <property name="width_chars">8</property>
             <attributes>
               <attribute name="weight" value="bold"/>
             </attributes>
           </object>
           <packing>
-            <property name="left_attach">4</property>
-            <property name="top_attach">13</property>
+            <property name="left_attach">3</property>
+            <property name="top_attach">6</property>
           </packing>
         </child>
         <child>
-          <object class="GtkLabel">
+          <object class="GtkScrolledWindow">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_left">5</property>
-            <property name="margin_right">5</property>
-            <property name="label" translatable="yes">Log</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">never</property>
+            <property name="vscrollbar_policy">always</property>
+            <property name="shadow_type">in</property>
+            <property name="propagate_natural_width">True</property>
+            <property name="propagate_natural_height">True</property>
+            <child>
+              <object class="GtkTextView" id="log_view">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="justification">right</property>
+                <property name="right_margin">10</property>
+                <property name="buffer">log_buffer</property>
+                <property name="accepts_tab">False</property>
+              </object>
+            </child>
           </object>
           <packing>
-            <property name="left_attach">3</property>
+            <property name="left_attach">2</property>
             <property name="top_attach">0</property>
+            <property name="width">2</property>
+            <property name="height">6</property>
           </packing>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
         </child>
         <child>
           <placeholder/>
